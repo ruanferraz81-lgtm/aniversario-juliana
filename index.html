@@ -71,15 +71,6 @@ h1{
     font-size:2.3em;
 }
 
-.foto{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    object-fit:cover;
-    margin:20px 0;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
 p{
     font-size:1.2em;
     line-height:1.8em;
@@ -96,12 +87,6 @@ p:nth-of-type(5){animation-delay:13s;}
 
 .versiculo{
     font-style:italic;
-}
-
-video{
-    width:100%;
-    margin-top:30px;
-    border-radius:15px;
 }
 
 @keyframes fadeIn{
@@ -131,6 +116,16 @@ video{
 
 <body>
 
+<!-- ÁUDIO DE FUNDO EMOCIONANTE -->
+<audio id="musica" loop>
+<source src="https://cdn.pixabay.com/download/audio/2023/03/21/audio_7d7c1b7a61.mp3?filename=emotional-piano-138567.mp3" type="audio/mp3">
+</audio>
+
+<!-- SOM DE ENVELOPE -->
+<audio id="somEnvelope">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f0c5dcd5f.mp3?filename=paper-rustle-110627.mp3" type="audio/mp3">
+</audio>
+
 <div class="envelope" onclick="abrirCarta()">
     <div class="texto-envelope">Para Juliana ❤️</div>
 </div>
@@ -140,8 +135,6 @@ video{
 <div class="conteudo">
 
 <h1>Feliz Aniversário, Mãe</h1>
-
-<img src="/WhatsApp Image 2026-02-28 at 23.39.18.jpeg" class="foto">
 
 <p>
 Hoje não é apenas um aniversário.
@@ -171,10 +164,6 @@ Eu amo a senhora mais do que palavras podem explicar.
 Obrigado por ser meu lar.
 </p>
 
-<video controls>
-<source src="/video.mp4.mp4" type="video/mp4">
-</video>
-
 <button class="botao" onclick="mensagemFinal()">Clique aqui 💌</button>
 
 </div>
@@ -182,8 +171,10 @@ Obrigado por ser meu lar.
 
 <script>
 function abrirCarta(){
+    document.getElementById('somEnvelope').play();
     document.querySelector('.envelope').style.display='none';
     document.getElementById('carta').style.display='block';
+    document.getElementById('musica').play();
 }
 
 function mensagemFinal(){
